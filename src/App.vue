@@ -1,28 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- 스크립트 단에서는 파스칼케이스가 맞고, 태그를 등록할 때는 케밥케이스로 등록한다.-->
+    <!-- 하지만 vue 에서 강력히 추천하는 방법은 파스칼이므로 파스칼사용할거임-->
+    <ToolBar></ToolBar>
+    <!-- <tool-bar></tool-bar> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ToolBar from './components/ToolBar.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
+    ToolBar,
+}
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  body {padding: 0; margin: 0;}
 </style>
