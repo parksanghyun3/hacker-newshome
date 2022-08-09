@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div v-for="item in ask"> {{ item.title }} </div>
+    <div v-for="item in ask" v-bind:key="item"> {{ item.title }} </div>
   </div>
 </template>
 
 <script>
-import console from 'console';
-import { fetchAsksList } from '../api/index.js';
+// import console from 'console';
+import { fetchAskList } from '../api/index.js';
  
 
 export default {
@@ -16,12 +16,12 @@ export default {
     }
   },  
   created(){
-    fetchAsksList()
-      var vm = this
-      .then(function(){
+    var vm = this
+    fetchAskList()
+      .then(function(response){
         vm.ask = response.data
       })
-      .catch(function(){
+      .catch(function(error){
         console.log(error);
       });
     
