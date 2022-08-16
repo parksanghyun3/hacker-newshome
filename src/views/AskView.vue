@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="item in ask" v-bind:key="item.title"> {{ item.title }} </div>
+    <div v-for="item in fetchedAsk" v-bind:key="item.title"> {{ item.title }} </div>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 // import console from 'console';
 // import { fetchAskList } from '../api/index.js';
  
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   // data(){
@@ -16,10 +16,15 @@ export default {
   //     ask: []
   //   }
   computed: {
-    ...mapState({
-        // ask 를 컴퓨티드로 만들었기 때문에 위에 v-for 문에 사용가능 this.$store.state.payload -> ask
-        ask: state => state.payload
-      })
+    ...mapGetters([
+      "fetchedAsk"
+    ]),
+      // ask 를 컴퓨티드로 만들었기 때문에 위에 v-for 문에 사용가능 this.$store.state.payload -> ask
+    // #2
+    // ...mapState({
+    //     fetchedAsk: state => state.payload
+    //   })
+    // #1
     // ask(){
 
       // return this.$store.state;
