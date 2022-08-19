@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div v-for="item in fetchedAsk" v-bind:key="item.title"> {{ item.title }} </div>
+    <p v-for="item in fetchedAsk" v-bind:key="item.title">
+      <a :href="item.url"> {{ item.title }} </a>
+      <small>{{ item.title }} by {{ item.user }}</small>
+    </p>
   </div>
 </template>
 
@@ -16,6 +19,7 @@ export default {
   //     ask: []
   //   }
   computed: {
+    // mapGatters의 배열과 객체연결의 차이
     ...mapGetters([
       "fetchedAsk"
     ]),
@@ -36,7 +40,8 @@ export default {
   //     .then(response => this.ask = response.data)
   //     .catch(error => console.log(error));
   // }
-  },  
+  },
+  
 }
 </script>
 

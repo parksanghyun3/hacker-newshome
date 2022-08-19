@@ -8,6 +8,8 @@ import UserView from '../views/UserView.vue';
 
 Vue.use(VueRouter);
 
+// router도 store처럼 같은 방법으로 모듈화 가능하다.
+
 export const router = new VueRouter({
   mode: 'history',
   routes: [
@@ -34,7 +36,7 @@ export const router = new VueRouter({
       component: ItemView,
     },
     {
-      path: "/user",
+      path: "/user:id",
       component: UserView,
     },
   ]
