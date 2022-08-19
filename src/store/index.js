@@ -1,7 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-import { fetchNewsList, fetchJobsList, fetchAskList } from "../api/index.js"
 import mutations from "./mutations.js"
 import actions from "./actions.js"
 // import { fetchJobsList } from "../api/index.js"
