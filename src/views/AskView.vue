@@ -2,7 +2,10 @@
   <div>
     <p v-for="item in fetchedAsk" v-bind:key="item.title">
       <a :href="item.url"> {{ item.title }} </a>
-      <small>{{ item.title }} by {{ item.user }}</small>
+      <small>
+        {{ item.title }} by {{ item.user }}
+        <!-- <router-link :to="`/user/${user.user}`"> {{ user.user }} </router-link> -->
+      </small>
     </p>
   </div>
 </template>

@@ -15,11 +15,14 @@ export const store = new Vuex.Store({
     news: [],
     jobs: [],
     ask: [],
+    // 전달할 params가 다수라 객체로 저장하는 느낌
+    user: {},
+    item: {},
   },
   getters: {
     fetchedAsk(state){
       return state.ask;
-    }
+    },
   },
   mutations,
   actions,
