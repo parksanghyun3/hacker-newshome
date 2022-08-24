@@ -17,4 +17,5 @@ export default {
   .header {padding: 8px; display: flex; background: #42b883; color:#fff;}
   .header a {margin-right: 10px; color: #fff; text-decoration: none; font-weight: 700;}
   .header .router-link-exact-active {color: #35495e;}
+  .wrap {padding: 0 20px;}
 </style>

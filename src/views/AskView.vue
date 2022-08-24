@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="wrap">
     <p v-for="item in fetchedAsk" v-bind:key="item.title">
-      <a :href="item.url"> {{ item.title }} </a>
+      <router-link :to="`/item/${item.id}`" :href="item.url"> {{ item.title }} </router-link>
       <small>
         {{ item.title }} by {{ item.user }}
-        <!-- <router-link :to="`/user/${user.user}`"> {{ user.user }} </router-link> -->
+        <!-- router-link에서 item.id로 접근하는 이유는 id값을 불러오면 객체안의 값을 불러올 수 있기 때문이다. 라고 생각합니다.-->
       </small>
     </p>
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrap">
     <p v-for="job in this.$store.state.jobs" v-bind:key="job.title">
       <a :href="job.url"> {{ job.title }}</a>
       <small>{{ job.domain }}</small>

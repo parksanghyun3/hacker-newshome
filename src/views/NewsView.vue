@@ -24,5 +24,5 @@ export default {
 </script>
 
 <style>
-  .wrap {padding: 0 20px;}
+
 </style>
