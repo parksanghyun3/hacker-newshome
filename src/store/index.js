@@ -15,9 +15,10 @@ export const store = new Vuex.Store({
     news: [],
     jobs: [],
     ask: [],
-    // 전달할 params가 다수라 객체로 저장하는 느낌
-    user: {},
-    item: {},
+    // 전달받을 데이터가 안에 담겨야 하므로... 빈객체나, 빈배열 형식으로 임의로 선택해서 받아줘도 된다.
+    // 네트워크 패널열어서 넘어오는 값 확인하면 된다. 보통의 경우 대부분 객체데이터로 넘어옴
+    user: [],
+    item: {}
   },
   getters: {
     fetchedAsk(state){

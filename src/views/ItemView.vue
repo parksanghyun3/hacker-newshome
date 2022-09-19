@@ -1,22 +1,23 @@
 <template>
   <div class="wrap">
     <p>{{ itemInfo.title }}</p>
-    <div v-html="itemInfo.content">{{ itemInfo.content }}</div>
+    <div>{{ itemInfo.content }}</div>
   </div>
 </template>
 
 <script>
+
 export default {
-  computed: {
+
+  // 왜 computed로 사용해야하는지..
+  // 템플릿안의 html에서 값을 참조하려면 computed나, methods의 안의 값을 리턴해줘야 참조가 가능하다..
+  methods: {
     itemInfo(){
       return this.$store.state.item;
     }
   },
   created() {
     const itemName = this.$route.params.id;
-    // console.log(this.$route.params.id);
-    // axios.get(`https://hacker-news.firebaseio.com/v0/user/${this.$route.params.id}.json`);
-    // userName을 인자로 사용해서 값을 넘김
     this.$store.dispatch("FETCH_ITEM", itemName);
   }
 }

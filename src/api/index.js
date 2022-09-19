@@ -23,6 +23,7 @@ function fetchJobsList(){
 function fetchUserInfo(username){
   return axios.get(`${config.baseUrl}user/${username}.json`);
 }
+
 function fetchItemInfo(itemname){
   return axios.get(`${config.baseUrl}item/${itemname}.json`);
 }
