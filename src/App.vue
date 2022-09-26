@@ -4,7 +4,9 @@
     <!-- 하지만 vue 에서 강력히 추천하는 방법은 파스칼이므로 파스칼사용할거임-->
     <ToolBar></ToolBar>
     <!-- <tool-bar></tool-bar> -->
-    <router-view></router-view>
+    <Transition name="page">
+      <router-view></router-view>
+    </Transition>
   </div>
 </template>
 
@@ -19,5 +21,9 @@ export default {
 </script>
 
 <style>
-  body {padding: 0; margin: 0;}
+  a {text-decoration: none; color: #34495e;}
+  a:hover {text-decoration: underline; color: #42b883;}
+  body {margin: 0; padding: 0;}
+  .page-enter-active, .page-leave-active {transition: opacity 0.3s ease;}
+  .page-enter-from, .page-leave-to {opacity: 0;}
 </style>

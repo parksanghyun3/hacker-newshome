@@ -1,12 +1,29 @@
 <template>
   <div class="wrap">
-    <p v-for="item in fetchedAsk" v-bind:key="item.title">
+    <!-- <p v-for="item in fetchedAsk" v-bind:key="item.title">
       <router-link :to="`/item/${item.id}`" :href="item.url"> {{ item.title }} </router-link>
       <small>
         {{ item.title }} by {{ item.user }}
-        <!-- router-link에서 item.id로 접근하는 이유는 id값을 불러오면 객체안의 값을 불러올 수 있기 때문이다. 라고 생각합니다.-->
+        router-link에서 item.id로 접근하는 이유는 id값을 불러오면 객체안의 값을 불러올 수 있기 때문이다. 라고 생각합니다.
       </small>
-    </p>
+    </p> -->
+
+    <ul class="ask_list">
+      <li v-for="(item, index) in fetchedAsk" :key="index" class="post">
+        <div class="points">
+          {{ item.points }}
+        </div>
+        <div class="link_text">
+          <p>
+            <router-link :to="`item/${item.id}`">{{ item.title }}</router-link>
+          </p>
+          <small>
+            {{ item.time_ago }} by
+              <router-link :to="`/user/${item.user}`" class="link_text">{{ item.user }}</router-link>
+          </small>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -48,6 +65,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  .asks_list {margin: 0; padding: 0;}
+  .post {display: flex; align-items: center; border-bottom: 1px solid #ddd;}
+  .points {padding: 0 20px; color: #42b883;}
+  .link_text {display: flex; align-items: center;}
 </style> 
