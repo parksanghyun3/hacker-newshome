@@ -18,8 +18,8 @@
             <router-link :to="`item/${item.id}`">{{ item.title }}</router-link>
           </p>
           <small>
-            {{ item.time_ago }} by
-              <router-link :to="`/user/${item.user}`" class="link_text">{{ item.user }}</router-link>
+            <span>{{ item.time_ago }} by</span>
+            <router-link :to="`/user/${item.user}`" class="link_text">{{ item.user }}</router-link>
           </small>
         </div>
       </li>
@@ -68,6 +68,8 @@ export default {
 <style scoped>
   .asks_list {margin: 0; padding: 0;}
   .post {display: flex; align-items: center; border-bottom: 1px solid #ddd;}
-  .points {padding: 0 20px; color: #42b883;}
+  .points {padding: 10px 20px; color: #42b883;}
   .link_text {display: flex; align-items: center;}
+  small {display: flex; align-items: center;}
+  p {margin: 0;}
 </style> 

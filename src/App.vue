@@ -26,4 +26,5 @@ export default {
   body {margin: 0; padding: 0;}
   .page-enter-active, .page-leave-active {transition: opacity 0.3s ease;}
   .page-enter-from, .page-leave-to {opacity: 0;}
+  ul {margin: 0; padding: 0;}
 </style>
