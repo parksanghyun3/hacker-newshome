@@ -1,10 +1,7 @@
 <template>
   <div class="wrap">
-    <!-- <p v-for="job in this.$store.state.jobs" v-bind:key="job.title">
-      <a :href="job.url"> {{ job.title }}</a>
-      <small>{{ job.domain }}</small>
-    </p> -->
-    <ul class="job_list">
+    <listItem></listItem>
+    <!-- <ul class="job_list">
       <li v-for="(job, index) in this.$store.state.jobs" :key="index" class="post">
         <div class="points">
           {{ job.points || 0 }}
@@ -17,14 +14,18 @@
           </small>
         </div>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
 <script>
 
-export default {
+import listItem from "../components/listItem.vue";
 
+export default {
+  components: {
+    listItem,
+  },
   created(){
     this.$store.dispatch("FETCH_JOBS");
   }

@@ -1,5 +1,6 @@
 <template>
   <div class="wrap">
+    <listItem></listItem>
     <!-- <p v-for="item in fetchedAsk" v-bind:key="item.title">
       <router-link :to="`/item/${item.id}`" :href="item.url"> {{ item.title }} </router-link>
       <small>
@@ -8,7 +9,7 @@
       </small>
     </p> -->
 
-    <ul class="ask_list">
+    <!-- <ul class="ask_list">
       <li v-for="(item, index) in fetchedAsk" :key="index" class="post">
         <div class="points">
           {{ item.points }}
@@ -23,7 +24,7 @@
           </small>
         </div>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
@@ -32,12 +33,16 @@
 // import { fetchAskList } from '../api/index.js';
  
 import { mapGetters } from 'vuex'
+import listItem from "../components/listItem.vue";
 
 export default {
   // data(){
   //   return {
   //     ask: []
   //   }
+  components: {
+    listItem,
+  },  
   computed: {
     // mapGatters의 배열과 객체연결의 차이
     ...mapGetters([

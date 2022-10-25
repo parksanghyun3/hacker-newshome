@@ -1,7 +1,8 @@
 <template>
+  <!-- 사용자 상세정보 -->
   <div class="wrap">
     <section>
-      <div class="user_container">
+      <!-- <div class="user_container">
         <i class="fa-solid fa-user"></i>
         <router-link :to="`user/${fetchedItem.user}`">
         {{ fetchedItem.user }}
@@ -9,22 +10,28 @@
         <div>
           {{ fetchedItem.time_ago }}
         </div>
-      </div>
+      </div> -->
+      <userProfile :info="fetchedItem">
+        <div slot="username">{{ fetchedItem.user }}</div>
+        <template slot="time"> {{ fetchedItem.time_ago }} </template>
+      </userProfile>
+    </section>
+    <section>
       <h2>
-        {{ fetchedItem.title }}
+        <!-- {{ fetchedItem.title }} -->
       </h2>
     </section>
-    <section v-html="fetchedItem.content"></section>
-    <!-- <p>{{ this.$store.state.item.title }}</p>
-    <div>{{ this.$store.state.item.content }}</div> -->
+    <!-- <section v-html="fetchedItem.content"></section> -->
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-
+import UserProfile from "../components/UserProfile.vue";
 export default {
-
+  components: {
+    UserProfile
+  },
   // 왜 computed로 사용해야하는지..
   // 템플릿안의 html에서 값을 참조하려면 computed나, methods의 안의 값을 리턴해줘야 참조가 가능하다..
   computed: {
@@ -43,5 +50,5 @@ export default {
 </script>
 
 <style scoped>
-  .user_container {display: flex; align-items: center;}
+  .user_container {display: flex;}
 </style>
