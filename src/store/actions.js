@@ -13,7 +13,10 @@ export default {
     // distructuring
     FETCH_JOBS({ commit }){
       fetchJobsList()
-      .then(({ data }) => commit("SET_JOBS", data)) 
+      .then(response => {
+        console.log(response.data);
+        commit("SET_JOBS", response.data);
+      })
       .catch(error => console.log(error))
     },
 

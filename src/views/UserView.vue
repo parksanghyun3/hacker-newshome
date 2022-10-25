@@ -3,10 +3,10 @@
     <!-- <p>name: {{ userInfo.id }}</p>
     <p>karma: {{ userInfo.karma }}</p>
     <p>created: {{ userInfo.created }}</p> -->
-    <UserProfile :info="userInfo">
-      <div slot="username"> {{ userinfo.id }} </div>
-      <template slot="time"> {{ userinfo.created }} </template>
-      <div slot="karma"> {{ userinfo.karma }} </div>
+    <UserProfile :info="userInfo"> userInfo라는 메서드를 인포라는걸로 담아서 
+      <div slot="username"> {{ userInfo.id }} </div>
+      <template slot="time"> {{ userInfo.created }} </template>
+      <div slot="karma"> {{ userInfo.karma }} </div>
     </UserProfile>
   </div>
 </template>
