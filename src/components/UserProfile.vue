@@ -3,9 +3,6 @@
     <section>
       <div class="user_container">
         <i class="fa-solid fa-user"></i>
-        <!-- <router-link :to="`user/${userInfo.user}`">
-          {{ userInfo.id }}
-        </router-link> -->
         <div>
           <!-- username: {{ info.id }} -->
           <slot name="username">
@@ -17,10 +14,10 @@
           <slot name="time">
 
           </slot>
+          <slot name="karma">
+  
+          </slot>
         </div>
-        <slot name="karma">
-
-        </slot>
       </div>
       <h2>
         {{ info.title }}
@@ -48,5 +45,5 @@ export default {
 </script>
 
 <style scoped>
-  .user_container {display: flex; align-items: center;}
+  /* .user_container {display: flex; align-items: center;} */
 </style>
