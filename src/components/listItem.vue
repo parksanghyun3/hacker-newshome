@@ -18,7 +18,7 @@
         <small>
           {{ item.time_ago }} by
             <router-link v-if="item.user" :to="`/user/${item.user}`">{{ item.user }}</router-link>
-            <a :href="item.domain" v-else>
+            <a :href="`https://${item.domain}`" v-else>
               {{ item.domain }}
             </a>
             <!-- <a v-else :href="`https://${item.domain}`" target="_blank">{{ item.domain }}</a> -->

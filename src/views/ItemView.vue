@@ -13,7 +13,7 @@
       </div> -->
       <userProfile :info="fetchedItem">
         <!-- <div slot="username">{{ fetchedItem.user }}</div> -->
-        <router-link slot="username" :to="`user/${fetchedItem.user}`">
+        <router-link slot="username" :to="`user/${fetchedItem.url}`">
           {{ fetchedItem.user }}
         </router-link>
         <template slot="time"> {{ "Posted" + fetchedItem.time_ago }} </template>
