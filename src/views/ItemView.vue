@@ -12,17 +12,14 @@
         </div>
       </div> -->
       <userProfile :info="fetchedItem">
-        <!-- <div slot="username">{{ fetchedItem.user }}</div> -->
-        <router-link slot="username" :to="`user/${fetchedItem.url}`">
-          {{ fetchedItem.user }}
-        </router-link>
-        <template slot="time"> {{ "Posted" + fetchedItem.time_ago }} </template>
+        <div slot="username">{{ fetchedItem.user }}</div>
+        <template slot="time"> {{ fetchedItem.time_ago }} </template>
       </userProfile>
     </section>
     <section>
-      <!-- <h2>
-        {{ fetchedItem.title }}
-      </h2> -->
+      <h2>
+        <!-- {{ fetchedItem.title }} -->
+      </h2>
     </section>
     <!-- <section v-html="fetchedItem.content"></section> -->
   </div>

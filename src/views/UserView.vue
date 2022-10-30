@@ -18,9 +18,9 @@ export default {
     UserProfile,
   },
   computed: {
-      userInfo() {
-          return this.$store.state.user;
-      }
+    userInfo() {
+        return this.$store.state.user;
+    }
   },
 
   // userview의 param를 받아왔기 때문에, route의 params의 id값을 가져온다.

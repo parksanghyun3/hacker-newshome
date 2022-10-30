@@ -9,15 +9,15 @@ const config = {
 
 // 2. API 함수들을 정리
 function fetchNewsList(){
-  return axios.get(`${config.baseUrl}news/1.json`)
+  return axios.get(`${config.baseUrl}news.json`)
 }
 
 function fetchAskList(){
-  return axios.get(`${config.baseUrl}ask/1.json`)
+  return axios.get(`${config.baseUrl}ask.json`)
 }
 
 function fetchJobsList(){
-  return axios.get(`${config.baseUrl}jobs/1.json`)
+  return axios.get(`${config.baseUrl}jobs.json`)
 }
 
 function fetchUserInfo(username){
