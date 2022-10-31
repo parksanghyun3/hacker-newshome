@@ -7,7 +7,10 @@ export default {
     // actions 내에 함수 형태로 작성해야함
     FETCH_NEWS(context){
       fetchNewsList()
-      .then(response => context.commit("SET_NEWS", response.data)) 
+      .then(response =>{
+        context.commit("SET_NEWS", response.data);
+        return response;
+    }) 
       .catch(error => console.log(error))
     },
     // distructuring

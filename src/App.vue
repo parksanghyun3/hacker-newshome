@@ -34,9 +34,14 @@ export default {
       this.loadingStatus = false;
     },
   },
-  create() {
+  created() {
     // Bus.$on("start:spinner", () => this.loadingStatus = true);
     bus.$on("start:spinner", this.startSpinner);
+    bus.$on("end:spinner", this.endSpinner);
+  },
+  beforeDestroy() {
+    bus.$off("start:spinner", this.startSpinner);
+    bus.$off("end:spinner", this.endSpinner);
   }
 }
 </script>
