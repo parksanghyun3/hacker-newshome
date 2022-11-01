@@ -21,13 +21,24 @@
 <script>
 
 import listItem from "../components/listItem.vue";
+import bus from "../utils/bus.js";
 
 export default {
   components: {
     listItem,
   },
   created(){
-    this.$store.dispatch("FETCH_JOBS");
+    bus.$emit("start:spinner");
+    setTimeout(() => {
+      this.$store.dispatch("FETCH_JOBS")
+      .then(() => {
+        console.log('fetched');
+        bus.$emit('end:spinner');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    }, 3000);
   }
 }
 </script>

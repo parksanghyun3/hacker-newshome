@@ -10,7 +10,7 @@ import bus from "../utils/bus.js";
 
 export default {
   components: {
-    ListItem,
+    ListItem, 
   },
   created(){
     bus.$emit("start:spinner");

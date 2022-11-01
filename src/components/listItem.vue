@@ -7,7 +7,7 @@
         </div>
         <div class="link_text">
           <template v-if="item.domain">
-            <a v-bind:href="item.domain">
+            <a :href="item.url">
               <p class="new_title">{{ item.title }}</p>
             </a>
           </template>
