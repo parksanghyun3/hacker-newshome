@@ -28,6 +28,10 @@ function fetchItemInfo(itemname){
   return axios.get(`${config.baseUrl}item/${itemname}.json`);
 }
 
+function fetchList(pageName){
+  return axios.get(`${config.baseUrl}${pageName}.json`);
+}
+
 // fetchNewsList()
 //   .then
 //   .catch
@@ -39,4 +43,5 @@ export {
   fetchNewsList,
   fetchUserInfo,
   fetchItemInfo,
+  fetchList,
 }

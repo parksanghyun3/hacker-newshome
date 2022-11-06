@@ -34,7 +34,8 @@
  
 import { mapGetters } from 'vuex'
 import listItem from "../components/listItem.vue";
-import bus from "../utils/bus.js";
+// import bus from "../utils/bus.js";
+import ListMixin from "../mixins/ListMixin.js";
 
 export default {
   // data(){
@@ -44,6 +45,7 @@ export default {
   components: {
     listItem,
   },  
+  mixins: [ListMixin],
   computed: {
     // mapGatters의 배열과 객체연결의 차이
     ...mapGetters([
@@ -60,23 +62,24 @@ export default {
       // return this.$store.state;
     // }
   },
-  created(){
-    bus.$emit("start:spinner");
-    setTimeout(() => {
-      this.$store.dispatch("FETCH_ASK")
-      .then(() => {
-        console.log('fetched');
-        bus.$emit('end:spinner');
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    }, 3000);
-  //   fetchAskList()
-  //     .then(response => this.ask = response.data)
-  //     .catch(error => console.log(error));
-  // }
-  },
+
+  // created(){
+  //   bus.$emit("start:spinner");
+  //   setTimeout(() => {
+  //     this.$store.dispatch("FETCH_ASK")
+  //     .then(() => {
+  //       console.log('fetched');
+  //       bus.$emit('end:spinner');
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  //   }, 3000);
+  // //   fetchAskList()
+  // //     .then(response => this.ask = response.data)
+  // //     .catch(error => console.log(error));
+  // // }
+  // },
   
 }
 </script>

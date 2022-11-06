@@ -38,27 +38,28 @@ export default {
     // console.log(this.$route.path === "/news");
     // route의 index.js 에 각 패스들마다 name값을 지정해주고, 변수로 그것을 불러옴
     // 그 이후 이름이 news 와 일치하는 애는 this.$store.dispatch("FETCH_NEWS")가 실행되게끔 함
-    const name = this.$route.name;
-    if(name === "news") {
-      this.$store.dispatch("FETCH_NEWS");
-    } else if (name === "ask") {
-      this.$store.dispatch("FETCH_ASK");
-    } else if (name === "jobs") {
-      this.$store.dispatch("FETCH_JOBS");
-    }
+    // const name = this.$route.name;
+    // if(name === "news") {
+    //   this.$store.dispatch("FETCH_NEWS");
+    // } else if (name === "ask") {
+    //   this.$store.dispatch("FETCH_ASK");
+    // } else if (name === "jobs") {
+    //   this.$store.dispatch("FETCH_JOBS");
+    // }
   },
   computed: {
     listItems(){
-      const name = this.$route.name;
-      if(name === "news") {
-        return this.$store.state.news;
-      }
-      else if (name === "ask") {
-        return this.$store.state.ask;
-      }
-      else if (name === "jobs") {
-        return this.$store.state.jobs;
-      } 
+      // const name = this.$route.name;
+      // if(name === "news") {
+      //   return this.$store.state.news;
+      // }
+      // else if (name === "ask") {
+      //   return this.$store.state.ask;
+      // }
+      // else if (name === "jobs") {
+      //   return this.$store.state.jobs;
+      // } 
+      return this.$store.state.list;
     }
   },
 }
