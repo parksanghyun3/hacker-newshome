@@ -21,7 +21,7 @@
 <script>
 
 import listItem from "../components/listItem.vue";
-import bus from "../utils/bus.js";
+// import bus from "../utils/bus.js";
 import ListMixin from "../mixins/ListMixin.js";
 
 export default {

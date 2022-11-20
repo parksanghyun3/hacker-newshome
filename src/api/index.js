@@ -8,12 +8,19 @@ const config = {
 
 
 // 2. API 함수들을 정리
+
 function fetchNewsList(){
   return axios.get(`${config.baseUrl}news.json`)
 }
 
-function fetchAskList(){
-  return axios.get(`${config.baseUrl}ask.json`)
+
+async function fetchAskList(){
+  try {
+    const response = axios.get(`${config.baseUrl}ask.json`);
+    return response; 
+  } catch(error) {
+    console.log(error);
+  }
 }
 
 function fetchJobsList(){
@@ -29,7 +36,12 @@ function fetchItemInfo(itemname){
 }
 
 function fetchList(pageName){
-  return axios.get(`${config.baseUrl}${pageName}.json`);
+  try {
+    return axios.get(`${config.baseUrl}${pageName}.json`);
+  } catch(error) {
+    console.log(error);
+  }
+  
 }
 
 // fetchNewsList()

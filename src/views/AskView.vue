@@ -44,7 +44,10 @@ export default {
   //   }
   components: {
     listItem,
-  },  
+  },
+  // mounted() {
+  //   bus.$emit("end:spinner");
+  // },
   mixins: [ListMixin],
   computed: {
     // mapGatters의 배열과 객체연결의 차이

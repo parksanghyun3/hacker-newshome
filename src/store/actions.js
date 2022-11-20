@@ -30,24 +30,60 @@ export default {
     //   .catch(error => console.log(error));
     // },
 
-    FETCH_USER({ commit }, name){
-      return fetchUserInfo(name)
-      .then(({ data }) => commit("SET_USER", data))
-      .catch(error => console.log(error)) 
+    //promise
+    // FETCH_USER({ commit }, name){
+    //   return fetchUserInfo(name)
+    //   .then(({ data }) => commit("SET_USER", data))
+    //   .catch(error => console.log(error)) 
+    // },
+
+    //async
+    async FETCH_USER(commit) {
+      try{
+        const response = await fetchUserInfo();
+        commit("SET_USER", response.data);
+        return response;
+      }
+      catch(error){
+        console.log(error);
+      }
     },
 
-    FETCH_ITEM({ commit }, item){
-      return fetchItemInfo(item)
-      .then(({ data }) => commit("SET_ITEM", data))
-      .catch(error => console.log(error)) 
+    //async
+    async FETCH_ITEM({commit},item) {
+      try{
+        const response = await fetchItemInfo(item)
+        commit("SET_ITEM", response.data);
+        return response;
+      }
+      catch(error){
+        console.log(error);
+      }
     },
-    FETCH_LIST({ commit }, pageName){
-      return fetchList(pageName)
-      .then((response) => {
-        console.log("4");
+
+    async FETCH_LIST({commit},pageName){
+      try{
+        const response = await fetchList(pageName);
         commit("SET_LIST", response.data);
-        return response.data
-      })
-      .catch(error => console.log(error));
+        return response;
+      }
+      catch(error){
+        console.log(error);
+      }
     }
+
+    // FETCH_ITEM({ commit }, item){
+    //   return fetchItemInfo(item)
+    //   .then(({ data }) => commit("SET_ITEM", data))
+    //   .catch(error => console.log(error)) 
+    // },
+    // FETCH_LIST({ commit }, pageName){
+    //   return fetchList(pageName)
+    //   .then((response) => {
+    //     console.log("4");
+    //     commit("SET_LIST", response.data);
+    //     return response.data
+    //   })
+    //   .catch(error => console.log(error));
+    // }
 }
